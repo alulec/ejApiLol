@@ -45,11 +45,17 @@ public class PersonajeControlador {
         return "unSoloPersonaje";
     }
 
-    @PostMapping("/super/vender")
-    public ResponseEntity<Boolean> vender(@RequestBody(required=true) Producto elCoso){
-
-        return new ResponseEntity<>(SM.venderProducto(elCoso.getId()), HttpStatus.OK);
+    @PostMapping("/nuevo/")
+    public String nuevoCampeon(@RequestBody(required=true) Personaje personaje, Model model){
+        listaCampeones.add(personaje);
+        model.addAttribute("campeon",listaCampeones.get(listaCampeones.size() - 1));
+        return "nuevoCampeon";
     }
 
-
+    @PostMapping("/eliminar/")
+    public String eliminarCampeon(@RequestBody(required=true) Personaje personaje, Model model){
+        listaCampeones.add(personaje);
+        model.addAttribute("campeon",listaCampeones.get(listaCampeones.size() - 1));
+        return "nuevoCampeon";
+    }
 }
