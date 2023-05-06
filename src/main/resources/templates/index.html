@@ -5,31 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-    <nav th:replace="layout :: navbar"></nav>
-    <div class="card" style="width:400px" th:each="ele : ${personajes}">
-        <img class="card-img-top" th:src="${ele.urlImagen}" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title" th:text="${ele.nombre}">John Doe</h4>
-            <h4 class="card-title" th:text="${ele.region}">John Doe</h4>
-            <h4 class="card-title" th:text="${ele.rol}">John Doe</h4>
-            <h4 class="card-title" th:text="${ele.winrate}">John Doe</h4>
-            <h4 class="card-title" th:text="${ele.dificultad}">John Doe</h4>
-            <p class="card-text" th:text="${ele.lore}">Some example text.</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
+<nav th:replace="layout :: navbar"></nav>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="card" style="width:400px" th:each="ele : ${personajes}">
+            <img class="card-img-top" th:src="${ele.urlImagen}" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title" th:text="${ele.nombre}">John Doe</h4>
+                <h4 class="card-title" th:text="${ele.region}">John Doe</h4>
+                <h4 class="card-title" th:text="${ele.rol}">John Doe</h4>
+                <h4 class="card-title" th:text="${ele.winrate}">John Doe</h4>
+                <h4 class="card-title" th:text="${ele.dificultad}">John Doe</h4>
+                <p class="card-text" th:text="${ele.lore}">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
         </div>
     </div>
-
-    <!-- Carousel -->
+</div>
+<!--
+    &lt;!&ndash; Carousel &ndash;&gt;
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-        <!-- Indicators/dots -->
+        &lt;!&ndash; Indicators/dots &ndash;&gt;
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
         </div>
 
-        <!-- The slideshow/carousel -->
+        &lt;!&ndash; The slideshow/carousel &ndash;&gt;
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="card" style="width:400px" th:each="ele : ${personajes}">
@@ -48,7 +52,7 @@
 
         </div>
 
-        <!-- Left and right controls/icons -->
+        &lt;!&ndash; Left and right controls/icons &ndash;&gt;
         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -56,6 +60,7 @@
             <span class="carousel-control-next-icon"></span>
         </button>
     </div>
+-->
 
 </body>
 </html>

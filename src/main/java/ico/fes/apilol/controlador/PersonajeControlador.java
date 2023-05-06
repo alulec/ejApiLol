@@ -54,8 +54,8 @@ public class PersonajeControlador {
 
     @PostMapping("/eliminar/")
     public String eliminarCampeon(@RequestBody(required=true) Personaje personaje, Model model){
-        listaCampeones.add(personaje);
-        model.addAttribute("campeon",listaCampeones.get(listaCampeones.size() - 1));
-        return "nuevoCampeon";
+        listaCampeones.remove(personaje);
+        model.addAttribute("campeon", listaCampeones.get(0));
+        return "campeonEliminado";
     }
 }
